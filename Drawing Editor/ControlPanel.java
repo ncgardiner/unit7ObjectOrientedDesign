@@ -15,13 +15,19 @@ public class ControlPanel extends JPanel
     JButton circle;
     JButton color;
     JButton square;
+    JPanel colorPanel;
+    DrawingPanel canvas;
     /**
      * Default constructor for objects of class ControlPanel
      */
-    public ControlPanel(DrawingPanel canvas)
+    public ControlPanel(DrawingPanel canvasIn)
     {
+        canvas = canvasIn;
         color = new JButton("Pick a Color");
         add(color);
+        colorPanel = new JPanel();
+        colorPanel.setBackground(canvas.getColor());
+        add(colorPanel);
         circle = new JButton("Add a Circle");
         add(circle);
         square = new JButton("Add a Square");
@@ -54,8 +60,37 @@ public class ControlPanel extends JPanel
         /** description of instance variable x (add comment for each instance variable) */
         public void actionPerformed(ActionEvent event)
         {
-            
+            if (event.getActionCommand()=="Pick a Color")
+            {
+                canvas.pickColor();
+                colorPanel.setBackground(canvas.getColor());
+            }
+            if (event.getActionCommand()=="Add a Circle")
+            {
+                canvas.addCircle();
+            }
+            if (event.getActionCommand()=="Add a Square")
+            {
+                canvas.addSquare();
+            }
         }
 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 }
