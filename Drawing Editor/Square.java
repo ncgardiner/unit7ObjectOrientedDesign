@@ -1,40 +1,19 @@
-
-
-/**
- * Write a description of class Square here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class Square
+import java.awt.Color;
+import java.awt.geom.Point2D;
+public class Square extends Shape
 {
-    /** description of instance variable x (add comment for each instance variable) */
-    private int x;
-
-    /**
-     * Default constructor for objects of class Square
-     */
-    public Square()
+    public Square(double x_coord,double y_coord, double radiusInput, Color shapeColor)
     {
-        // initialise instance variables
-        x = 0;
+        x=x_coord;
+        y=y_coord;
+        radius=radiusInput;
+        color=shapeColor;
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *    that describes the operation of the method
-     *
-     * @pre        preconditions for the method
-     *            (what the method assumes about the method's parameters and class's state)
-     * @post    postconditions for the method
-     *            (what the method guarantees upon completion)
-     * @param    y    description of parameter y
-     * @return    description of the return value
-     */
-    public int sampleMethod(int y)
+    
+    public boolean isInside(Point2D.Double point)
     {
-        // put your code here
-        return x+y;
+        x_in = point.getX();
+        y_in = point.getY();
+        
     }
-
 }

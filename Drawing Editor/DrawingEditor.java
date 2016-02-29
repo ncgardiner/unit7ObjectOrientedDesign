@@ -10,8 +10,8 @@ import java.awt.Button;
 public class DrawingEditor extends JFrame
 {
     /** description of instance variable x (add comment for each instance variable) */
-    private static final int FRAME_HEIGHT= 500;
-    private static final int FRAME_WIDTH= 500;
+    private static final int FRAME_HEIGHT= 800;
+    private static final int FRAME_WIDTH= 800;
     private DrawingPanel canvas;
     private ControlPanel controls;
     /**
