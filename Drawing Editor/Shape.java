@@ -10,6 +10,7 @@ public abstract class Shape
     Color color;
     public Shape(double x_coord,double y_coord, double radiusInput, Color shapeColor)
     {
+        //set up basic info about the shape
         x=x_coord;
         y=y_coord;
         radius=radiusInput;
@@ -26,10 +27,13 @@ public abstract class Shape
         return radius;
     }
     
-    public void move(double x_in, double y_in)
+    public void move(double x_in, double y_in, double prevX, double prevY)
     {
-        x = x_in;
-        y = y_in;
+        //allows for smooth dragging by keeping track of the relation between the point of
+        //the click and the center of the circle seperately
+        
+        x = x - (prevX-x_in);
+        y = y - (prevY-y_in);
     }
     
     public void setRadius(double r)

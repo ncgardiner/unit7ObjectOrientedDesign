@@ -3,25 +3,16 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import javax.swing.JPanel;
-/**
- * Write a description of class ControlPanel here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class ControlPanel extends JPanel
 {
-    /** description of instance variable x (add comment for each instance variable) */
     JButton circle;
     JButton color;
     JButton square;
     JPanel colorPanel;
     DrawingPanel canvas;
-    /**
-     * Default constructor for objects of class ControlPanel
-     */
     public ControlPanel(DrawingPanel canvasIn)
     {
+        //set up of all the buttons, colors, background, etc
         canvas = canvasIn;
         color = new JButton("Pick a Color");
         add(color);
@@ -32,32 +23,16 @@ public class ControlPanel extends JPanel
         add(circle);
         square = new JButton("Add a Square");
         add(square);
-        
+        //add the listeners to the buttons so they work
         ClickListener listener = new ClickListener();
         color.addActionListener(listener);
         circle.addActionListener(listener);
         square.addActionListener(listener);
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *    that describes the operation of the method
-     *
-     * @pre        preconditions for the method
-     *            (what the method assumes about the method's parameters and class's state)
-     * @post    postconditions for the method
-     *            (what the method guarantees upon completion)
-     * @param    y    description of parameter y
-     * @return    description of the return value
-     */
-    public void sampleMethod(int y)
-    {
-        
-    }
-    
     public class ClickListener implements ActionListener
     {
-        /** description of instance variable x (add comment for each instance variable) */
+        //Initiates methods when buttons are clicked
         public void actionPerformed(ActionEvent event)
         {
             if (event.getActionCommand()=="Pick a Color")
